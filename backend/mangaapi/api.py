@@ -1,3 +1,9 @@
+"""
+api.py
+- provides the API endpoints for consuming and producing
+  REST requests and responses
+"""
+
 from flask import Blueprint, jsonify, request, current_app, url_for, Flask
 from .models import db, Manga_details
 
