@@ -10,10 +10,19 @@ db = SQLAlchemy()
 class Manga_details(db.Model):
     __tablename__ = 'manga_details'
 
-    id = db.Column(db.Integer, primary_key=True)   
+    id = db.Column(db.Integer, primary_key=True) 
+    title = db.Column(db.String(100))  
     author = db.Column(db.String(100))
     summary = db.Column(db.Text)
+
+class Manga_chap_details(db.Model):
+    __tablename__ = 'manga_chap_details'
+
+    id = db.Column(db.Integer, primary_key=True)
+    manga_details_id = db.Column(db.Integer, db.ForeignKey('manga_details.id'),nullable=False) 
+    manga_chap_id = db.Column(db.Integer, db.ForeignKey('manga_chapter.id'),nullable=False) 
    
+
 class Manga_images(db.Model):
     __tablename__ = 'manga_images'
 
@@ -21,6 +30,7 @@ class Manga_images(db.Model):
     file_path = db.Column(db.String(100))
     file_type = db.Column(db.String(100))
     mime_type = db.Column(db.String(100))
+    
    
 class Manga_chapter(db.Model):
     __tablename__ = 'manga_chapter'
@@ -29,7 +39,6 @@ class Manga_chapter(db.Model):
     title = db.Column(db.String(100), unique=True)
     issue_no = db.Column(db.Integer)
     
-
 class Manga_chap_image(db.Model):
     __tablename__ = 'manga_chap_image'
 
@@ -48,7 +57,7 @@ class Manga_chap_genre(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     manga_genre_id = db.Column(db.Integer, db.ForeignKey('manga_genre.id'),nullable=False)
-    manga_chap_id = db.Column(db.Integer, db.ForeignKey('manga_chapter.id'),nullable=False)
+    manga_details_id = db.Column(db.Integer, db.ForeignKey('manga_details.id'),nullable=False) 
     
 
 
