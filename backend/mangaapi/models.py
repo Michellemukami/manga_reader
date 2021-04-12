@@ -45,7 +45,7 @@ class Manga_genre(db.Model):
     genre_title = db.Column(db.String(100), unique=True)
     
 class Manga_chap_genre(db.Model):
-    __tablename__ = 'manga_chap_genre'
+    __tablename__ = 'manga_details_genre'
 
     id = db.Column(db.Integer, primary_key=True)
     manga_genre_id = db.Column(db.Integer, db.ForeignKey('manga_genre.id'),nullable=False)
