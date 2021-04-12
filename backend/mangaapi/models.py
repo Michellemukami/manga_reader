@@ -15,14 +15,6 @@ class Manga_details(db.Model):
     author = db.Column(db.String(100))
     summary = db.Column(db.Text)
 
-class Manga_chap_details(db.Model):
-    __tablename__ = 'manga_chap_details'
-
-    id = db.Column(db.Integer, primary_key=True)
-    manga_details_id = db.Column(db.Integer, db.ForeignKey('manga_details.id'),nullable=False) 
-    manga_chap_id = db.Column(db.Integer, db.ForeignKey('manga_chapter.id'),nullable=False) 
-   
-
 class Manga_images(db.Model):
     __tablename__ = 'manga_images'
 
