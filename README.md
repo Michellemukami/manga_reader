@@ -4,7 +4,7 @@
 An app where you can read and download your favorite mangas
 
 ### Built With
-* [![Vue][Vue.js]][Vue-url]
+* Vue
 * Python
 * Mysql
 * Laravel
