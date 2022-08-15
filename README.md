@@ -1,7 +1,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## Manga Reader 
-An app where you can read and download your favorite mangas
+A website where you can read and download your favorite mangas
 
 ### Built With
 * Vue
