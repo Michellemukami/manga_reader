@@ -1,6 +1,6 @@
 
 <!-- ABOUT THE PROJECT -->
-## About 
+## Manga Reader 
 An app where you can read and download your favorite mangas
 
 ### Built With
